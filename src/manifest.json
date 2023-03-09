@@ -1,0 +1,36 @@
+{
+  "name": "MyChromeExtension",
+  "description": "",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "host_permissions": [
+    "http://*/",
+    "https://*/",
+    "<all_urls>"
+  ],
+  "permissions": [
+    "webRequest",
+    "declarativeContent",
+    "storage",
+    "webNavigation",
+    "tabs",
+    "notifications",
+    "scripting"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "file://*/*",
+        "http://localhost:*/*"
+      ],
+      "js": [
+        "src/AppRunner.ts"
+      ],
+      "run_at": "document_end",
+      "all_frames": true
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "default-src 'self';connect-src ws://127.0.0.1:* http://127.0.0.1:* https://127.0.0.1:* ws://localhost:*"
+  }
+}

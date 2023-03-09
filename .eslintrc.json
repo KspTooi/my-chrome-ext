@@ -1,0 +1,63 @@
+{
+  "parser": "@typescript-eslint/parser", // 解析器
+
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+
+  "parserOptions": {
+    "ecmaVersion": 2020, // 指定JS版本使用ES12
+    "sourceType": "module" // 默认为script，使用es6 module设置为module
+  },
+
+  "extends": [ // 集成的代码规范
+    "eslint-config-standard",
+    "plugin:@typescript-eslint/recommended"
+  ],
+
+  "plugins": [], // 插件
+
+  "globals": {
+    "chrome": "writable",
+    "define_current_env": "writable",
+    "define_current_hmr_port": "writable",
+    "$": "writable"
+  },
+
+  "rules": {
+    "@typescript-eslint/no-unused-vars": "off",
+    // 单独配置规则，会覆盖extends的规则
+    "quotes": ["error","double",{
+      "allowTemplateLiterals": true
+    }],
+    "spaced-comment": "off",
+    "no-multiple-empty-lines": "off",
+    "prefer-const": "off",
+    //"no-use-before-define": ["error", { "functions": false, "classes": false ,"variables": false}],
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "camelcase": "off",
+    "@typescript-eslint/ban-types": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "space-before-function-paren": "off",
+    "space-before-blocks": "off",
+    "padded-blocks": "off",
+    "eqeqeq": "off",
+    "no-multi-spaces": "off",
+    "@typescript-eslint/no-inferrable-types": "off",
+    "comma-dangle": "off",
+    "eol-last": "off",
+    "no-trailing-spaces": "off",
+    "key-spacing": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "keyword-spacing": "off",
+    "arrow-spacing": "off",
+    "handle-callback-err": "off",
+    "semi": "off",
+    "comma-spacing": "off",
+    "indent": ["error",4],
+    "object-curly-spacing": "off"
+  }
+}
